@@ -47,14 +47,12 @@ type Cards struct {
 func allowedCardRarity(rarity string) bool {
 	// make a map of allowed card rarities from the mtg api
 	// this will filter out things like promo cards and masterpieces
-	m := make(map[string]bool)
-	m["Common"] = true
-	m["Uncommon"] = true
-	m["Rare"] = true
-	m["Mythic Rare"] = true
-	m["Basic Land"] = true
-
-	return m[rarity]
+	switch rarity {
+	case "Common", "Uncommon", "Rare", "Mythic Rare", "Basic Land":
+		return true
+	default:
+		return false
+	}
 }
 
 // loads custom trigger/response pairs from the custom file specified in the config
