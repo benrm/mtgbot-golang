@@ -228,8 +228,8 @@ func main() {
 		fmt.Printf("Loading config from '%s'\n", os.Args[1])
 		loadConfig(os.Args[1])
 	} else {
-		fmt.Println("Loading config from './config.json'")
-		loadConfig("/home/ezimmer/go/src/mtgbot-golang/config.json")
+		fmt.Println("Loading config from '/etc/mtgbot/config.json'")
+		loadConfig("/etc/mtgbot/config.json")
 	}
 
 	if config.CustomResponseFile != "" {
